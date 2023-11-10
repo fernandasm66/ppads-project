@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+  
+     <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7a9a8;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 500px;
+    background-color: red;
+    padding: 20px 30px;
+    background-color: #613275;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .login_header {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  
+  .login_headline {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  form {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  input {
+    width: 100%;
+    height: 40px;
+    display: block;
+    border: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-color: transparent;
+    background-color: transparent;
+    border-bottom: 1px solid #ef798a;
+    color: #f7a9a8;
+    
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  ::placeholder {
+    color: #f7a9a8;
+  }
+  
+  .btn {
+    width: 70%;
+    padding: 12px 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #f7a9a8;
+    border: none;
+    color: #ef798a;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .bottom {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .bottom .footer_link {
+    color: #ef798a;
+    text-decoration: none;
+  }
+
+  .support-contact-bottom {
+            position: fixed;
+            bottom: 30px;
+            text-align: center;
+            width: 100%;
+   }
+
+  .support-contact-bottom .footer_link {
+            background-color: #f7a9a8;
+            color: #ef798a;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+  }
+  
+</style>
+</head>
+
+<body>
+  <div class="container">
+      <h1 class="login_header">Login</h1>
+      <p class="login_headline">Por favor, insira suas credenciais para logar</p>
+      <form id="loginForm" class="form">
+          <input type="text" id="username" placeholder="usuário">
+          <input type="password" id="password" placeholder="senha">
+          <button class="btn" onclick="checkLogin()">Login</button>
+          <div class="bottom">
+              <p class="footer_text">Não possui conta?</p>
+              <a href="cadastro.html" class="footer_link">Crie Uma Conta!</a>
+          </div>
+      </form>
+  </div>
+
+  <!-- Adicionado o link "Contate o Suporte" no canto inferior da página -->
+  <div class="support-contact-bottom">
+      <p class="footer_text">Precisa de suporte?</p>
+      <a href="https://wa.me/numero_do_whatsapp_suporte" class="footer_link">Contate o Suporte</a>
+  </div>
+
+  <script>
+      function checkLogin() {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          var users = {
+              "Edson": "1234",
+              "Fernanda": "1234",
+              "Enilson": "1234",
+              "Fabiana": "1234",
+              "Marcos": "1234"
+          };
+
+          if (users.hasOwnProperty(username) && users[username] === password) {
+              alert("Login bem-sucedido. Bem-vindo, " + username + "!");
+          } else {
+              alert("Usuário ou senha incorretos. Tente novamente.");
+          }
+      }
+  </script>
+</body>
+
+</html>
